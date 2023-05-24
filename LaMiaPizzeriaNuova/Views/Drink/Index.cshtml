@@ -1,0 +1,39 @@
+﻿@model List<Drink>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h3 style="font-family: 'Alegreya SC', serif;">
+                Le nostre pizze
+            </h3>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-12">
+            <table class="table border-danger" style="font-family: 'Poltawski Nowy', serif;">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col" style="font-family: 'Alegreya SC', serif;">Bevanda</th>
+                        <th scope="col" style="font-family: 'Alegreya SC', serif;">Descrizione</th>
+                        <th scope="col" style="font-family: 'Alegreya SC', serif;">Litri</th>
+                        <th scope="col" style="font-family: 'Alegreya SC', serif;">Prezzo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Drink drink in Model)
+                    {
+                        <tr>
+                            <th scope="row">@drink.Name</th>
+                            <td>@drink.Description</td>
+                            <td>@drink.Liters</td>
+                            <td>
+                                @drink.Price
+                            </td>
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
