@@ -1,0 +1,29 @@
+﻿@model Drink
+
+<div class="container">
+    <h2 class="mb-3">Aggiungi una bevanda</h2>
+    <form asp-controller="Drink" asp-action="AddDrink" method="post">
+        @Html.AntiForgeryToken()
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Nome</label>
+            <input asp-for="Name" type="text" class="form-control" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Descrizione</label>
+            <textarea asp-for="Description" rows="10" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Liters" class="form-label">Litri</label>
+            <input asp-for="Liters" type="text" class="form-control" required>
+            <span asp-validation-for="Liters" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Prezzo della bevanda</label>
+            <input asp-for="Price" type="text" class="form-control" required>
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Salva</button>
+    </form>
+</div>

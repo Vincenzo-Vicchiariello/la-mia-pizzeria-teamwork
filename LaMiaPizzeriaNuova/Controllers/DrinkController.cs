@@ -16,7 +16,35 @@ namespace LaMiaPizzeriaNuova.Controllers
             }
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
 
+        public IActionResult AddDrink(Drink drinkToAdd)
+        {
+            if (ModelState.IsValid)
+            {
+                using (PizzaContext ctx = new PizzaContext())
+                {
+                    ctx.Add(drinkToAdd);
+                    ctx.SaveChanges();
+                    return RedirectToAction("Index");
+
+                }
+            }
+            else
+            {
+                return View("AddDrink", drinkToAdd);
+
+            }
+
+        }
+
+
+        [HttpGet]
+        public IActionResult AddDrink()
+        {
+            return View("AddDrink");
+        }
 
     }
 }

@@ -12,8 +12,8 @@
         <div class="col-12">
             <table class="table border-danger" style="font-family: 'Poltawski Nowy', serif;">
                 <thead>
+
                     <tr>
-                        <th scope="col"></th>
                         <th scope="col" style="font-family: 'Alegreya SC', serif;">Bevanda</th>
                         <th scope="col" style="font-family: 'Alegreya SC', serif;">Descrizione</th>
                         <th scope="col" style="font-family: 'Alegreya SC', serif;">Litri</th>
@@ -27,13 +27,15 @@
                             <th scope="row">@drink.Name</th>
                             <td>@drink.Description</td>
                             <td>@drink.Liters</td>
-                            <td>
-                                @drink.Price
-                            </td>
+                            <td>@drink.Price</td>
 
                         </tr>
                     }
-
+                    <div class="row d-flex">
+                        <div class="col-12 d-flex justify-content-center">
+                            <a href="@Url.Action("AddDrink", "Drink")" class="btn btn-warning" style="font-family: 'Poltawski Nowy', serif;">Aggiungi una bevanda al menù</a>
+                        </div>
+                    </div>
 
                 </tbody>
             </table>
