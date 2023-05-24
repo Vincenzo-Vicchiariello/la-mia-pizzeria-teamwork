@@ -18,6 +18,7 @@
                         <th scope="col" style="font-family: 'Alegreya SC', serif;">Descrizione</th>
                         <th scope="col" style="font-family: 'Alegreya SC', serif;">Litri</th>
                         <th scope="col" style="font-family: 'Alegreya SC', serif;">Prezzo</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,7 +29,11 @@
                             <td>@drink.Description</td>
                             <td>@drink.Liters</td>
                             <td>@drink.Price</td>
-
+                            <td>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <a href="@Url.Action("Update", "Drink", new{Id = drink.Id})" class="btn btn-warning" style="font-family: 'Poltawski Nowy', serif;">Modifica bevanda</a>
+                                </div>
+                            </td>
                         </tr>
                     }
                     <div class="row d-flex">
